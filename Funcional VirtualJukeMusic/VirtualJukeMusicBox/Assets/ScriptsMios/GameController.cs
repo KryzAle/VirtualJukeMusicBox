@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public int hazardCound;
     private float spawnWait = 1.22f;
     private float spawnWait2;
-    private float startWait = 0.22f;
+    private float startWait = 4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < hazardCound; i++)
         {
 
-            spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 0, spawnValues.z);
+            spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
             Instantiate(hazard, spawnPosition, Quaternion.identity);
 
 
