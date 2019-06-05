@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class destruir : MonoBehaviour
 {
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,8 @@ public class destruir : MonoBehaviour
     }
     void OnCollisionEnter(Collision otherObj)
     {
-        if (otherObj.gameObject.tag == "cubo")
-        {
-            Destroy(otherObj.gameObject, .1f);
-        }
+            Instantiate(explosion, transform.position, otherObj.transform.rotation);
+            Destroy(gameObject, .1f);
 
     }
 }
