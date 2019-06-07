@@ -6,6 +6,9 @@ TagManager:
   tags:
   - laser
   - cubo
+  - play1
+  - play2
+  - play3
   layers:
   - Default
   - TransparentFX
