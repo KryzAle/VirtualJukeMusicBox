@@ -11,52 +11,89 @@ public class GameController : MonoBehaviour
     public Vector3 spawnValues2;
     public Vector3 spawnValues3;
     public int hazardCound;
-    private float spawnWait = 1.22f;
-    private float spawnWait2;
-    private float startWait = 4f;
+    public float spawnWait = 1f;
+    public float spawnWait2=1.2f;
+    public float startWait = 0.8f;
     
 
     // Update is called once per frame
-    /*IEnumerator SpawnWaves()
+    IEnumerator SpawnWaves()
     {
-        Vector3 spawnPosition = new Vector3();
+        
         yield return new WaitForSeconds(startWait);
-        for (int i = 0; i < hazardCound; i++)
+        for (int i = 0; i < 2; i++)
         {
-
-            spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-            Instantiate(hazard, spawnPosition, Quaternion.identity);
-
-
-
+            CrearIzquierda();
             yield return new WaitForSeconds(spawnWait);
-
+            CrearDerecha();
+            yield return new WaitForSeconds(spawnWait2);
         }
-
-    }*/
-    public void MyCallbackEventHandler(BeatDetection.EventInfo eventInfo)
-    {
-        switch (eventInfo.messageInfo)
+        yield return new WaitForSeconds(2f);
+        CrearIzquierda();
+        yield return new WaitForSeconds(2.6f);
+        CrearIzquierda();
+        for (int i = 0; i < 2; i++)
         {
-            case BeatDetection.EventType.Kick:
-                StartCoroutine(createMusic(hazard));
-                break;
-           
+            yield return new WaitForSeconds(1.2f);
+            CrearDerecha();
+            yield return new WaitForSeconds(1);
+            CrearIzquierda();
         }
-    }
+        yield return new WaitForSeconds(2.8f);
+        CrearIzquierda();
+        yield return new WaitForSeconds(2f);
+        CrearDerecha();
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(spawnWait);
+            CrearIzquierda();
+            yield return new WaitForSeconds(spawnWait2);
+            CrearIzquierda();
+            yield return new WaitForSeconds(spawnWait);
+            CrearDerecha();
+            yield return new WaitForSeconds(spawnWait2);
+            CrearDerecha();
+        }
 
-    private IEnumerator createMusic(GameObject objeto)
-    {
-        Random rnd = new Random();
-        Vector3 spawnPosition = new Vector3();
-        spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-        Instantiate(hazard, spawnPosition, Quaternion.identity);
-        yield break;
+
     }
+    void CrearDerecha()
+    {
+        Vector3 spawnPosition = new Vector3();
+        spawnPosition = new Vector3(spawnValues.x, spawnValues.y, spawnValues.z);
+        Instantiate(hazard, spawnPosition, Quaternion.identity);
+
+    }
+    void CrearIzquierda()
+    {
+        Vector3 spawnPosition = new Vector3();
+        spawnPosition = new Vector3(-spawnValues.x, spawnValues.y, spawnValues.z);
+        Instantiate(hazard, spawnPosition, Quaternion.identity);
+
+    }
+    /* public void MyCallbackEventHandler(BeatDetection.EventInfo eventInfo)
+     {
+         switch (eventInfo.messageInfo)
+         {
+             case BeatDetection.EventType.Kick:
+                 StartCoroutine(createMusic(hazard));
+                 break;
+
+         }
+     }
+
+     private IEnumerator createMusic(GameObject objeto)
+     {
+         Random rnd = new Random();
+         Vector3 spawnPosition = new Vector3();
+         spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+         Instantiate(hazard, spawnPosition, Quaternion.identity);
+         yield break;
+     }*/
     // Start is called before the first frame update
     void Start()
     {
-        AudioBeat.GetComponent<BeatDetection>().CallBackFunction = MyCallbackEventHandler;
-        //StartCoroutine(SpawnWaves());
+        //AudioBeat.GetComponent<BeatDetection>().CallBackFunction = MyCallbackEventHandler;
+        StartCoroutine(SpawnWaves());
     }
 }

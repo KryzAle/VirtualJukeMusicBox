@@ -481,6 +481,7 @@ MonoBehaviour:
   ghithat: {fileID: 1560290216}
   matOn: {fileID: 2100000, guid: 625d3e3ef6c954f3090c9a16838f83bb, type: 2}
   matOff: {fileID: 2100000, guid: 183bfece54ea143fc91ac292280fbcde, type: 2}
+  cubos: 0
 --- !u!4 &751420874
 Transform:
   m_ObjectHideFlags: 0
@@ -945,7 +946,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 78a44115418d2ca4983ef78ebafe9463, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ce486e6eca3c8594e828da06b2f69a3f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

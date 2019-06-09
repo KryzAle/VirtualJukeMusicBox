@@ -18,8 +18,8 @@ public class destruir : MonoBehaviour
     }
     void OnCollisionEnter(Collision otherObj)
     {
-            Instantiate(explosion, transform.position, otherObj.transform.rotation);
-            Destroy(gameObject, .1f);
+        Instantiate(explosion, transform.position, otherObj.transform.rotation);
+        Destroy(gameObject, .01f);
 
     }
 }

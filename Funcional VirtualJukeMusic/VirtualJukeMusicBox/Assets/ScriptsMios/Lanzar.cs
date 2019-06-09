@@ -20,12 +20,5 @@ public class Lanzar : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
-    void OnCollisionEnter(Collision otherObj)
-    {
-        if (otherObj.gameObject.tag == "laser")
-        {
-            Destroy(otherObj.gameObject, .1f);
-        }
-
-    }
+    
 }

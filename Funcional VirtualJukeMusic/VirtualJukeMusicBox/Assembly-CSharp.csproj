@@ -192,10 +192,12 @@
     <Compile Include="Assets\ScriptsMios\DestroyByTime.cs" />
     <Compile Include="Assets\ScriptsMios\destruir.cs" />
     <Compile Include="Assets\ScriptsMios\GameController.cs" />
+    <Compile Include="Assets\ScriptsMios\GameOver.cs" />
     <Compile Include="Assets\ScriptsMios\GenerarCubos.cs" />
     <Compile Include="Assets\ScriptsMios\InicioController.cs" />
     <Compile Include="Assets\ScriptsMios\Lanzar.cs" />
     <Compile Include="Assets\ScriptsMios\PlaySong.cs" />
+    <Compile Include="Assets\ScriptsMios\ReinciarVida.cs" />
     <Compile Include="Assets\VRMovementPack\Scripts\iTween.cs" />
     <Compile Include="Assets\VRMovementPack\Scripts\VRAutowalk.cs" />
     <Compile Include="Assets\VRMovementPack\Scripts\VRBluetoothController.cs" />

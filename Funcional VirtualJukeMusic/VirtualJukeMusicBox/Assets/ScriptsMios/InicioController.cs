@@ -22,6 +22,10 @@ public class InicioController : MonoBehaviour
         {
             SceneManager.LoadScene("Scena1Test");
         }
+        if (otherObj.gameObject.CompareTag("reintentar "))
+        {
+            SceneManager.LoadScene("MenuInicio");
+        }
 
     }
 }
