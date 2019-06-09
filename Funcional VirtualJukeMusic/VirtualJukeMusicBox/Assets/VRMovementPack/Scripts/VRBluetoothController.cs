@@ -22,6 +22,6 @@ public class VRBluetoothController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // Move with SimpleMove based on Horizontal adn Vertical input
-        myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") + Vector3.right * Input.GetAxis("Horizontal")));
+        myCC.Move(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") + Vector3.right * Input.GetAxis("Horizontal")));
     }
 }

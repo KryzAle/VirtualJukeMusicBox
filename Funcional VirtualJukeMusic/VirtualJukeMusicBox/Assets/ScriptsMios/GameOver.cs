@@ -15,10 +15,10 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (contadorFallos == 4)
+        /*if (contadorFallos == 4)
         {
         StartCoroutine(Terminar());
-        }
+        }*/
     }
     IEnumerator Terminar()
     {
