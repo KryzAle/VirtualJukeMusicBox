@@ -1709,7 +1709,7 @@ GameObject:
   - component: {fileID: 4372445436168801635}
   m_Layer: 0
   m_Name: Cube2Song1
-  m_TagString: cubo
+  m_TagString: cubo1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

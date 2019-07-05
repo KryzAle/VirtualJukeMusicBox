@@ -22,6 +22,10 @@ public class InicioController : MonoBehaviour
         {
             SceneManager.LoadScene("SONG1");
         }
+        if (otherObj.gameObject.CompareTag("play2"))
+        {
+            SceneManager.LoadScene("SONG2");
+        }
         if (otherObj.gameObject.CompareTag("reintentar"))
         {
             SceneManager.LoadScene("MenuInicio");

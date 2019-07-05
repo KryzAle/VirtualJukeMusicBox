@@ -8,7 +8,7 @@ public class PlaySong : MonoBehaviour
     void Start()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.PlayDelayed(2);
+        audioSource.PlayDelayed(3);
     }
 
     // Update is called once per frame
