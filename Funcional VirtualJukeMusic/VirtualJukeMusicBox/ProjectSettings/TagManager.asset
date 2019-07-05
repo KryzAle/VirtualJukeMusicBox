@@ -11,6 +11,8 @@ TagManager:
   - play3
   - pared
   - reintentar
+  - cubo2
+  - cubo1
   layers:
   - Default
   - TransparentFX

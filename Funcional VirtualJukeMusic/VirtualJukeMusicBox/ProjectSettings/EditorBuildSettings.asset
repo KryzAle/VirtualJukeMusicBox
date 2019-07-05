@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverView.unity
     guid: 8d1da02099c08064c96f4194cab57924
+  - enabled: 1
+    path: Assets/Scenes/WinView.unity
+    guid: 09d01aa2ba8117a49876a7e5ebcbc9de
+  - enabled: 1
+    path: Assets/DemoEscena2/Vast Outer Space/EXAMPLE/SONG2.unity
+    guid: 4547825d60af78e4dba31ef1b4f50a71
   m_configObjects: {}

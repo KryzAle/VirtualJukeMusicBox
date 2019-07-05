@@ -283,3 +283,5 @@ D:\Documentos\PROYECTOS GIT\VirtualJukeMusicBox\Funcional VirtualJukeMusic\Virtu
 D:\Documentos\PROYECTOS GIT\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Documentos\PROYECTOS GIT\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.dll
 D:\Documentos\PROYECTOS GIT\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.pdb
+D:\Recibido Por Dukto\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.dll
+D:\Recibido Por Dukto\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.pdb
