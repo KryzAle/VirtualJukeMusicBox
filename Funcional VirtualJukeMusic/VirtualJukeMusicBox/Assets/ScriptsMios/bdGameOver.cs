@@ -26,7 +26,6 @@ public class bdGameOver : MonoBehaviour
         string sqlQuery = "SELECT MAX(id),* FROM Persona";
         dbcmd.CommandText = sqlQuery;
         IDataReader reader = dbcmd.ExecuteReader();
-
         while (reader.Read())
         {
             
