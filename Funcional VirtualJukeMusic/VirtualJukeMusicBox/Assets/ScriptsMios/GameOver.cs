@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Mono.Data.Sqlite;
+using System.Data;
+using UnityEngine.UI;
+
 public class GameOver : MonoBehaviour
 {
     public int contadorFallos = 0;
     public GameObject destruir;
     public Lives vida_canvas;
     int vida = 3;
+    public Text nombre;
+    public ReinciarVida bdd;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +26,8 @@ public class GameOver : MonoBehaviour
         
         if (contadorFallos==4)
         {
-            SceneManager.LoadScene("GameOverView");
+            
+            perdiste();
         }
         
         if (vida >= 0)
@@ -44,5 +51,11 @@ public class GameOver : MonoBehaviour
             contadorFallos++;
             vida--;
         }
+    }
+    public void perdiste()
+    {
+        nombre = GameObject.Find("nick").GetComponent<Text>();
+        bdd.Guardar(nombre.text, bdd.score);
+        SceneManager.LoadScene("GameOverView");
     }
 }

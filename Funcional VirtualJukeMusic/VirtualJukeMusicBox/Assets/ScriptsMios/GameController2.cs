@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class GameController2 : MonoBehaviour
 {
     public GameObject hazard;
@@ -13,6 +15,8 @@ public class GameController2 : MonoBehaviour
     private float spawnWait = 0.48f;
     private float spawnWait2 = 0.18f;
     private float startWait = 2f;
+    public ReinciarVida bdd;
+    public Text nombre;
 
 
     // Update is called once per frame
@@ -517,6 +521,8 @@ public class GameController2 : MonoBehaviour
         CrearIzquierda();
 
         yield return new WaitForSeconds(4f);
+        nombre = GameObject.Find("nick").GetComponent<Text>();
+        bdd.Guardar(nombre.text, bdd.score);
         SceneManager.LoadScene("WinView");
     }
     void CrearDerecha()

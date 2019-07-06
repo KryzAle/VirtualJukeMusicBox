@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class GameController : MonoBehaviour
 {
     public GameObject AudioBeat;
@@ -14,7 +16,9 @@ public class GameController : MonoBehaviour
     private float spawnWait = 1.27f;
     private float spawnWait2=1.2f;
     private float startWait = 2f;
-    
+    public ReinciarVida bdd;
+    public Text nombre;
+
 
     // Update is called once per frame
     IEnumerator SpawnWaves()
@@ -215,6 +219,8 @@ public class GameController : MonoBehaviour
             CrearIzquierda();
         }
         yield return new WaitForSeconds(3f);
+        nombre = GameObject.Find("nick").GetComponent<Text>();
+        bdd.Guardar(nombre.text, bdd.score);
         SceneManager.LoadScene("WinView");
     }
     void CrearDerecha()
