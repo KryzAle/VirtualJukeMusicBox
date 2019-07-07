@@ -189,6 +189,7 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\GvrCursorHelper.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+    <Compile Include="Assets\ScriptsMios\Android.cs" />
     <Compile Include="Assets\ScriptsMios\bd.cs" />
     <Compile Include="Assets\ScriptsMios\bdGameOver.cs" />
     <Compile Include="Assets\ScriptsMios\DestroyByTime.cs" />
@@ -202,6 +203,7 @@
     <Compile Include="Assets\ScriptsMios\Lives.cs" />
     <Compile Include="Assets\ScriptsMios\PlaySong.cs" />
     <Compile Include="Assets\ScriptsMios\ReinciarVida.cs" />
+    <Compile Include="Assets\ScriptsMios\Unity.cs" />
     <Compile Include="Assets\VRMovementPack\Scripts\iTween.cs" />
     <Compile Include="Assets\VRMovementPack\Scripts\VRAutowalk.cs" />
     <Compile Include="Assets\VRMovementPack\Scripts\VRBluetoothController.cs" />
@@ -458,6 +460,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Documentos/PROYECTOS GIT/VirtualJukeMusicBox/Funcional VirtualJukeMusic/VirtualJukeMusicBox/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data">
+      <HintPath>D:/Documentos/PROYECTOS GIT/VirtualJukeMusicBox/Funcional VirtualJukeMusic/VirtualJukeMusicBox/Assets/Plugins/Mono.Data.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

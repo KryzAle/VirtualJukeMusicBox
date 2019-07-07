@@ -5,9 +5,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using Mono.Data.Sqlite;
 using System.Data;
+//References
+using System.IO;
 
 public class ReinciarVida : MonoBehaviour
 {
+    private string conn, sqlQuery;
+    IDbConnection dbconn;
+    IDbCommand dbcmd;
+    private IDataReader reader;
+    string DatabaseName = "Employers.s3db";
     // Start is called before the first frame update
     public int aciertos = 0;
     public int score = 0;
@@ -22,6 +29,52 @@ public class ReinciarVida : MonoBehaviour
 
 void Start()
     {
+        //unity comentale para ejecutar
+        string filepath = Application.dataPath + "/Plugins/" + DatabaseName;
+
+        //open db connection
+        conn = "URI=file:" + filepath;
+
+        Debug.Log("Stablishing connection to: " + conn);
+        dbconn = new SqliteConnection(conn);
+        dbconn.Open();
+        //android descomentale para ejecutar
+        /*string filepath = Application.persistentDataPath + "/" + DatabaseName;
+        if (!File.Exists(filepath))
+        {
+            // If not found on android will create Tables and database
+
+            Debug.LogWarning("File \"" + filepath + "\" does not exist. Attempting to create from \"" +
+                             Application.dataPath + "!/assets/Employers");
+
+            // UNITY_ANDROID
+            WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/Employers.s3db");
+            while (!loadDB.isDone) { }
+            // then save to Application.persistentDataPath
+            File.WriteAllBytes(filepath, loadDB.bytes);
+        }
+
+        conn = "URI=file:" + filepath;
+
+        Debug.Log("Stablishing connection to: " + conn);
+        dbconn = new SqliteConnection(conn);
+        dbconn.Open();
+
+        string query;
+        query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score varchar(200))";
+        try
+        {
+            dbcmd = dbconn.CreateCommand(); // create empty command
+            dbcmd.CommandText = query; // fill the command
+            reader = dbcmd.ExecuteReader(); // execute command which returns a reader
+        }
+        catch (Exception e)
+        {
+
+            Debug.Log(e);
+
+        }*/
+        //Lo que hiciste
         ActualizarMarcadorPuntos();
 
         System.Random rnd = new System.Random();
@@ -67,27 +120,16 @@ void Start()
     }
     public void Guardar(string nombre,int puntos)
     {
-        string conn = "URI=file:" + Application.dataPath + "/Plugins/Datos.db"; //Path to database.
-        IDbConnection dbconn;
-        dbconn = (IDbConnection)new SqliteConnection(conn);
-        dbconn.Open(); //Open connection to the database.
-        IDbCommand dbcmd = dbconn.CreateCommand();
-        string sqlQuery = "INSERT INTO Persona (nick,score) VALUES ('" + nombre + "','" + puntos +"')";
-        dbcmd.CommandText = sqlQuery;
-
-        if (dbcmd.ExecuteNonQuery() == 1)
+        //unity Comentale para compilar
+        using (dbconn = new SqliteConnection(conn))
         {
-            Debug.Log("se guardo" + nombre + "','" + puntos);
-
-        }
-        else
-        {
-            Debug.Log("no se guardo ni madres");
+            dbconn.Open(); //Open connection to the database.
+            dbcmd = dbconn.CreateCommand();
+            sqlQuery = string.Format("insert into Staff (nick, score) values (\"{0}\",\"{1}\")", nombre, puntos);// table name
+            dbcmd.CommandText = sqlQuery;
+            dbcmd.ExecuteScalar();
+            dbconn.Close();
         }
 
-        dbcmd.Dispose();
-        dbcmd = null;
-        dbconn.Close();
-        dbconn = null;
     }
 }
