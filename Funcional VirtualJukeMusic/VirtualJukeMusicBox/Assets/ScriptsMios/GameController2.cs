@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,7 +18,7 @@ public class GameController2 : MonoBehaviour
     private float startWait = 2f;
     public ReinciarVida bdd;
     public Text nombre;
-
+    public AudioSource audioSource;
 
     // Update is called once per frame
     IEnumerator SpawnWaves()
@@ -522,7 +523,8 @@ public class GameController2 : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
         nombre = GameObject.Find("nick").GetComponent<Text>();
-        bdd.Guardar(nombre.text, bdd.score);
+        TimeSpan time = TimeSpan.FromSeconds(audioSource.time);
+        bdd.Guardar(nombre.text, bdd.score, time.ToString("mm':'ss"), "Alone");
         SceneManager.LoadScene("WinView");
     }
     void CrearDerecha()

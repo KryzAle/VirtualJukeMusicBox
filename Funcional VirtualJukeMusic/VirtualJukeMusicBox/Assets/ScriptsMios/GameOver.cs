@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Mono.Data.Sqlite;
 using System.Data;
 using UnityEngine.UI;
+using System;
 
 public class GameOver : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameOver : MonoBehaviour
     int vida = 3;
     public Text nombre;
     public ReinciarVida bdd;
+    public AudioSource audioSource;
+    public string nombreMapa;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +58,8 @@ public class GameOver : MonoBehaviour
     public void perdiste()
     {
         nombre = GameObject.Find("nick").GetComponent<Text>();
-        bdd.Guardar(nombre.text, bdd.score);
+        TimeSpan time = TimeSpan.FromSeconds(audioSource.time);
+        bdd.Guardar(nombre.text, bdd.score,time.ToString("mm':'ss"), nombreMapa);
         SceneManager.LoadScene("GameOverView");
     }
 }

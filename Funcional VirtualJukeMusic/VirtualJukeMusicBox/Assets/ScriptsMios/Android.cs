@@ -43,7 +43,7 @@ public class Android : MonoBehaviour
         dbconn.Open();
 
         string query;
-        query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score NUMERIC)";
+        query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score NUMERIC,tiempo varchar(100),mapa varchar(100))";
         try
         {
             dbcmd = dbconn.CreateCommand(); // create empty command
@@ -69,7 +69,7 @@ public class Android : MonoBehaviour
             c.SetParent(null);
             Destroy(c.gameObject);
         }
-        string nick;
+        string nick,tiempo,mapa;
         double score;
         using (dbconn = new SqliteConnection(conn))
         {
@@ -83,11 +83,15 @@ public class Android : MonoBehaviour
                 // idreaders = reader.GetString(1);
                 nick = reader.GetString(1);
                 score = reader.GetDouble(2);
-
+                tiempo = reader.GetString(3);
+                mapa = reader.GetString(4);
                 GameObject go = (GameObject)Instantiate(listaPrefab);
                 go.transform.SetParent(content.transform);
                 go.transform.Find("nicklb").GetComponent<Text>().text = nick;
                 go.transform.Find("scorelb").GetComponent<Text>().text = score.ToString();
+                go.transform.Find("tiempolb").GetComponent<Text>().text = tiempo;
+                go.transform.Find("mapalb").GetComponent<Text>().text = mapa;
+
             }
             reader.Close();
             reader = null;

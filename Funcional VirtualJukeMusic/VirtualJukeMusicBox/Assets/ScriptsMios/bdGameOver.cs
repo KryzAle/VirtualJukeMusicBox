@@ -43,7 +43,7 @@ public class bdGameOver : MonoBehaviour
         dbconn.Open();
 
         string query;
-        query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score varchar(200))";
+        query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score NUMERIC,tiempo varchar(100),mapa varchar(100))";
         try
         {
             dbcmd = dbconn.CreateCommand(); // create empty command

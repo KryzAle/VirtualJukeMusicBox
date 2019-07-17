@@ -13,6 +13,7 @@ TagManager:
   - reintentar
   - cubo2
   - cubo1
+  - pause
   layers:
   - Default
   - TransparentFX

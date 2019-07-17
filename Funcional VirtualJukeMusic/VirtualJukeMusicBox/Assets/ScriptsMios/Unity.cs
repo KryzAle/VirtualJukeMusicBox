@@ -42,7 +42,7 @@ public class Unity : MonoBehaviour
             c.SetParent(null);
             Destroy(c.gameObject);
         }
-        string nick;
+        string nick, tiempo, mapa;
         double score;
         using (dbconn = new SqliteConnection(conn))
         {
@@ -53,14 +53,16 @@ public class Unity : MonoBehaviour
             IDataReader reader = dbcmd.ExecuteReader();
             while (reader.Read())
             {
-                // idreaders = reader.GetString(1);
                 nick = reader.GetString(1);
                 score = reader.GetDouble(2);
-
+                tiempo = reader.GetString(3);
+                mapa = reader.GetString(4);
                 GameObject go = (GameObject)Instantiate(listaPrefab);
                 go.transform.SetParent(content.transform);
                 go.transform.Find("nicklb").GetComponent<Text>().text = nick;
                 go.transform.Find("scorelb").GetComponent<Text>().text = score.ToString();
+                go.transform.Find("tiempolb").GetComponent<Text>().text = tiempo;
+                go.transform.Find("mapalb").GetComponent<Text>().text = mapa;
             }
             reader.Close();
             reader = null;

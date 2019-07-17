@@ -26,7 +26,6 @@ public class ReinciarVida : MonoBehaviour
     public string[] nicknames = new string[6]{ "DinoJukebox", "KellyBum", "MrElite", "BumMaster", "DaPro","Dapawn"};
 
 
-
 void Start()
     {
         //unity comentale para ejecutar
@@ -61,7 +60,7 @@ void Start()
         dbconn.Open();
 
         string query;
-        query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score varchar(200))";
+         query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score NUMERIC,tiempo varchar(100),mapa varchar(100))";
         try
         {
             dbcmd = dbconn.CreateCommand(); // create empty command
@@ -118,14 +117,14 @@ void Start()
         }
 
     }
-    public void Guardar(string nombre,int puntos)
+    public void Guardar(string nombre,int puntos,string tiempo,string mapa)
     {
         //unity Comentale para compilar
         using (dbconn = new SqliteConnection(conn))
         {
             dbconn.Open(); //Open connection to the database.
             dbcmd = dbconn.CreateCommand();
-            sqlQuery = string.Format("insert into Staff (nick, score) values (\"{0}\",\"{1}\")", nombre, puntos);// table name
+            sqlQuery = string.Format("insert into Staff (nick, score,tiempo,mapa) values (\"{0}\",\"{1}\",\"{2}\",\"{3}\")", nombre, puntos,tiempo,mapa);// table name
             dbcmd.CommandText = sqlQuery;
             dbcmd.ExecuteScalar();
             dbconn.Close();
