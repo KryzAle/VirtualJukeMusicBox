@@ -569,3 +569,6 @@ D:\Developer\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\
 D:\Developer\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Developer\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.dll
 D:\Developer\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\obj\Debug\Assembly-CSharp.pdb
+D:\Developer\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\Temp\bin\Debug\Mono.Data.dll
+D:\Developer\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
+D:\Developer\VirtualJukeMusicBox\Funcional VirtualJukeMusic\VirtualJukeMusicBox\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml

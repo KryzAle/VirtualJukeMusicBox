@@ -29,16 +29,18 @@ public class ReinciarVida : MonoBehaviour
 void Start()
     {
         //unity comentale para ejecutar
-        string filepath = Application.dataPath + "/Plugins/" + DatabaseName;
+       /* string filepath = Application.dataPath + "/Plugins/" + DatabaseName;
 
         //open db connection
         conn = "URI=file:" + filepath;
 
         Debug.Log("Stablishing connection to: " + conn);
         dbconn = new SqliteConnection(conn);
-        dbconn.Open();
+        dbconn.Open();*/
+        //comentar hasta aqui
+
         //android descomentale para ejecutar
-        /*string filepath = Application.persistentDataPath + "/" + DatabaseName;
+        string filepath = Application.persistentDataPath + "/" + DatabaseName;
         if (!File.Exists(filepath))
         {
             // If not found on android will create Tables and database
@@ -72,7 +74,7 @@ void Start()
 
             Debug.Log(e);
 
-        }*/
+        }
         //Lo que hiciste
         ActualizarMarcadorPuntos();
 

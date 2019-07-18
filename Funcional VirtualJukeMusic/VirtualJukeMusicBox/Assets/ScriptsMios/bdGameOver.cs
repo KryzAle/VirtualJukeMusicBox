@@ -21,7 +21,7 @@ public class bdGameOver : MonoBehaviour
     void Start()
     {
         //android descomentale para ejecutar
-        /* string filepath = Application.persistentDataPath + "/" + DatabaseName;
+        string filepath = Application.persistentDataPath + "/" + DatabaseName;
         if (!File.Exists(filepath))
         {
             // If not found on android will create Tables and database
@@ -55,16 +55,17 @@ public class bdGameOver : MonoBehaviour
 
             Debug.Log(e);
 
-        }*/
+        }
         //unity comentale para compilar
-        string filepath = Application.dataPath + "/Plugins/" + DatabaseName;
+        /*string filepath = Application.dataPath + "/Plugins/" + DatabaseName;
 
         //open db connection
         conn = "URI=file:" + filepath;
 
         Debug.Log("Stablishing connection to: " + conn);
         dbconn = new SqliteConnection(conn);
-        dbconn.Open();
+        dbconn.Open();*/
+        //comentar hasta aqui
         Listar();
     }
     public void Listar()

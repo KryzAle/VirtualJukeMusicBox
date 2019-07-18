@@ -43,7 +43,7 @@ public class Android : MonoBehaviour
         dbconn.Open();
 
         string query;
-        query = "CREATE TABLE Staff (ID INTEGER PRIMARY KEY   AUTOINCREMENT, nick varchar(100), score NUMERIC,tiempo varchar(100),mapa varchar(100))";
+        query = "CREATE TABLE Staff (Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,nick TEXT,score NUMERIC, tiempo TEXT,mapa TEXT)";
         try
         {
             dbcmd = dbconn.CreateCommand(); // create empty command
